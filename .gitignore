@@ -1,0 +1,10 @@
+# local_server
+raspberry_server/venv/
+raspberry_server/smile_env/
+raspberry_server/Dockerfile
+
+
+# C#
+local_server/bin/
+local_server/obj/
+local_server/.vs/
