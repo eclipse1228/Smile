@@ -8,20 +8,28 @@ using OpenCvSharp.Extensions;
 using System.Net;
 using System.IO;
 using System.Diagnostics;
+using Microsoft.Extensions.Configuration;
+using DotNetEnv;
 
 namespace smiletracker
 {
     public partial class Form1 : Form
     {
+        // configure Your IP on appsettings.json "StreamingUrl"
+
         private VideoCapture capture;
         private CancellationTokenSource cts;
         private bool isStreaming = false;
         private HttpListener httpListener;
-        private string streamingUrl = "http://<Your-IP>:8080/stream/";
+        private string streamingUrl;
 
         public Form1()
         {
             InitializeComponent();
+            // DotNetEnv.Env.Load();
+            // .env 파일 로드
+            DotNetEnv.Env.TraversePath().Load(); // 상위 디렉토리까지 다 확인함.
+            streamingUrl = Env.GetString("IP_ADDRESS");
             StartCamera();
             InitializeStreaming();
         }

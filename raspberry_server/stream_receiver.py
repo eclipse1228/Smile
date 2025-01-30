@@ -1,7 +1,7 @@
 import cv2
 
 # 노트북의 IP 주소를 입력하세요. 예: "192.168.1.100"
-stream_url = "http://<Your_IP>:8080/stream/"
+stream_url = "http://192.168.35.125:8080/stream/"
 
 cap = cv2.VideoCapture(stream_url)
 

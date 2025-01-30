@@ -8,3 +8,4 @@ raspberry_server/Dockerfile
 local_server/bin/
 local_server/obj/
 local_server/.vs/
+local_server/.env
