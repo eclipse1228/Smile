@@ -29,7 +29,7 @@ namespace smiletracker
             // DotNetEnv.Env.Load();
             // .env 파일 로드
             DotNetEnv.Env.TraversePath().Load(); // 상위 디렉토리까지 다 확인함.
-            streamingUrl = Env.GetString("IP_ADDRESS");
+            streamingUrl = Env.GetString("IP_ADDRESS"); // fopr example; http://<Your_IP>:8080/stream/
             StartCamera();
             InitializeStreaming();
         }

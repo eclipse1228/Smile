@@ -10,14 +10,14 @@ if not cap.isOpened():
     exit()
 
 while True:
-    ret, frame = cap.read()
+    ret, frame = cap.read() # ret : 프로그램을 성공적으로 읽었는지 여부, frame 은 읽은 프레임
     if not ret:
         print("프레임을 읽을 수 없습니다.")
         break
 
-    cv2.imshow('Stream', frame)
+    cv2.imshow('Stream', frame) # 읽은 프레임 표시 
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'): # 키 입력을 기다린다. q입력시 종료 
         break
 
 cap.release()
